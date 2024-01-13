@@ -87,11 +87,37 @@ main {
   transform: rotate(-25deg);
 }
 
+.light {
+  position: absolute;
+  width: 11px;
+  height: 15px;
+  background: #e5e2c1;
+  border: 1px solid gray;
+  right: 145px;
+  border-radius: 50%;
+  z-index: 3;
+  top: 52px;
+  transform: rotate3d(2, 2, -1, 74deg);
+  box-shadow: "none";
+  animation: light 1s 2s infinite;
+}
+
 @keyframes up {
   0% {
     top: var(--start);
   }
   100% {
     top: var(--end);
+  }
+}
+
+@keyframes light {
+  0% {
+    background: #ffffff;
+    border: "none";
+    box-shadow: 1px 7px 15px white;
+  }
+  100% {
+    background: #e5e2c1;
   }
 }
