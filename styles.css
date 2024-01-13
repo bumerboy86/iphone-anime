@@ -32,12 +32,11 @@ main {
   align-items: center;
   width: 27px;
   height: 37px;
+  opacity: 1;
   background: #1a1818;
   border: 2px solid #9d9797;
   transform: rotate3d(2, 2, -1, 65deg);
-  animation-name: up;
-  animation-duration: 3000ms;
-  animation-timing-function: linear;
+  animation: hideshow 4s linear, up 5s 3s linear;
   z-index: 10;
 }
 
@@ -85,6 +84,7 @@ main {
   right: 0;
   bottom: -44px;
   transform: rotate(-25deg);
+  animation: move 3s linear;
 }
 
 .light {
@@ -99,7 +99,19 @@ main {
   top: 52px;
   transform: rotate3d(2, 2, -1, 74deg);
   box-shadow: "none";
-  animation: light 1s 2s infinite;
+  animation: hideshow 4s linear, light 1s 6s infinite;
+}
+
+@keyframes hideshow {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes up {
@@ -119,5 +131,14 @@ main {
   }
   100% {
     background: #e5e2c1;
+  }
+}
+
+@keyframes move {
+  0% {
+    right: -250px;
+  }
+  100% {
+    right: 0px;
   }
 }
